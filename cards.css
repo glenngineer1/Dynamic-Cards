@@ -1,0 +1,18 @@
+.cardDimensions {
+  height: 200px;
+  width: 200px;
+  border: 2px solid black;
+  margin: 10px;
+  display: inline-block;
+}
+
+.output {
+  height: 150px;
+  width: 150px;
+  margin: 2px auto;
+}
+
+.buttonLocation {
+  margin: 20px 80px 0;
+  padding: 0;
+}
