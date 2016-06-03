@@ -4,6 +4,7 @@
   border: 2px solid black;
   margin: 10px;
   display: inline-block;
+  background-color: yellow;
 }
 
 .output {
