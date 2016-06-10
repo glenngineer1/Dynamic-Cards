@@ -1,32 +1,27 @@
-var newSubmit = document.getElementById("submit");
+var newSubmit = document.getElementById("submit").addEventListener("click", createCard);
 var newCards = document.getElementById("cards");
 var inputText = document.getElementById("input");
-// var counter = 1;
-
-newSubmit.addEventListener("click", createCard);
-// document.body.addEventListener("click", function(event){
-//   console.log(event.target)
-//   console.log(event)
-// });
+var counter = 0;
 
 function createCard() {
+  counter++;
   var outputEl = inputText.value;
+  var card = `<div class="cards"><p class="cardNumber">I am card #${counter}</p><p class="userInput">${outputEl}</p><button id="delete--${counter}">Delete</button></div>`
 
-  newCards.innerHTML +=
-  '<div id="card" class="cardDimensions">' +
-    '<div class="output">' + outputEl + '</div>' +
-    '<button id="button" class="buttonLocation" type="submit">Delete</button>' +
-  '</div>';
+  var newDiv = document.createElement("article");
+  newDiv.innerHTML = card;
+  var newAttr = document.createAttribute("id");
+  newAttr.value = `cardwrapper--${counter}`;
+  newDiv.setAttributeNode(newAttr);
+  newCards.appendChild(newDiv);
 
-  var thisCard = document.getElementById("button");
-  console.log("thisCard", thisCard);
-  thisCard.addEventListener("click", deleteCard);
-  // counter++;
-  // console.log(thisCard);
+  var thisCard = document.getElementById(`delete--${counter}`).addEventListener("click", deleteCard);
+}
   function deleteCard() {
-    newCards.parentNode.removeChild(newCards);
-  }
-};
+    var clickDelete = event.target.id.split("--")[1];
+    var cardToDelete = document.getElementById(`cardwrapper--${clickDelete}`);
+    newCards.removeChild(cardToDelete);
+}
 
 
 

@@ -1,4 +1,4 @@
-.cardDimensions {
+.cards {
   height: 200px;
   width: 200px;
   border: 2px solid black;
@@ -7,13 +7,14 @@
   background-color: yellow;
 }
 
-.output {
-  height: 150px;
-  width: 150px;
-  margin: 2px auto;
+.cards button {
+  margin: 0 10px;
 }
 
-.buttonLocation {
-  margin: 20px 80px 0;
-  padding: 0;
+.cardNumber {
+  padding: 0 10px;
+}
+
+.userInput {
+  padding: 0 10px;
 }
